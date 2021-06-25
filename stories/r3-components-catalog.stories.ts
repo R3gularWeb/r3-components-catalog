@@ -1,30 +1,41 @@
-import { html, TemplateResult } from 'lit-html';
-import '../src/r3-components-catalog.js';
+import { html } from 'lit-element';
+import 'r3-form-text/dist/r3-form-text';
 
 export default {
-  title: 'R3ComponentsCatalog',
-  component: 'r3-components-catalog',
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+  title: 'R3FormText',
 };
 
-interface Story<T> {
-  (args: T): TemplateResult;
-  args?: Partial<T>;
-  argTypes?: Record<string, unknown>;
-}
+const DefaultTemplate = ({}) =>
+  html`
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=VT323&display=swap" rel="stylesheet"> 
+    <r3-form-text></r3-form-text>
+  `;
 
-interface ArgTypes {
-  title?: string;
-  backgroundColor?: string;
-}
+const DescriptionTemplate = ({}) =>
+  html`
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=VT323&display=swap" rel="stylesheet"> 
+    <r3-form-text
+      with-label
+      with-description
+    ></r3-form-text>
+  `;
 
-const Template: Story<ArgTypes> = ({ title, backgroundColor = 'white' }: ArgTypes) => html`
-  <r3-components-catalog style="--r3-components-catalog-background-color: ${backgroundColor}" .title=${title}></r3-components-catalog>
-`;
+const ChangeSizeTemplate = ({}) =>
+  html`
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=VT323&display=swap" rel="stylesheet"> 
+    <div style="width: 30%;">
+      <r3-form-text
+        with-label
+        with-description
+      ></r3-form-text>
+    </div>
+  `;
 
-export const App = Template.bind({});
-App.args = {
-  title: 'My app',
-};
+export const Default = DefaultTemplate.bind({});
+
+export const WithDescriptionLabel = DescriptionTemplate.bind({});
+
+export const ChangeSize = ChangeSizeTemplate.bind({});
