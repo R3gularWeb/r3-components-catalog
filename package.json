@@ -18,6 +18,9 @@
   "license": "MIT",
   "dependencies": {
     "lit": "^2.0.0-rc.2",
-    "r3-form-text": "https://github.com/R3gularWeb/r3-form-text.git"
+    "r3-form-text": "https://github.com/R3gularWeb/r3-form-text.git",
+    "r3-textarea": "https://github.com/R3gularWeb/r3-textarea.git",
+    "r3-clip-box": "https://github.com/R3gularWeb/r3-clip-box.git",
+    "r3-card-neon": "https://github.com/R3gularWeb/r3-card-neon.git"
   }
 }
